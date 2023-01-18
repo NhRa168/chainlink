@@ -119,6 +119,10 @@ func (c *ChainScoped) EthTxResendAfterThreshold() time.Duration {
 	return c.cfg.Transactions.ResendAfterThreshold.Duration()
 }
 
+func (c *ChainScoped) EthTxLogUnconfirmedAfterThreshold() time.Duration {
+	return c.cfg.Transactions.LogUnconfirmedAfterThreshold.Duration()
+}
+
 func (c *ChainScoped) EvmFinalityDepth() uint32 {
 	return *c.cfg.FinalityDepth
 }

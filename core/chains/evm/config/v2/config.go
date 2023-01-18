@@ -354,43 +354,44 @@ func (c *Chain) asV1() *types.ChainCfg {
 		BlockHistoryEstimatorBlockDelay:                nullIntFromPtr(c.RPCBlockQueryDelay),
 		BlockHistoryEstimatorBlockHistorySize:          nullIntFromPtr(c.GasEstimator.BlockHistory.BlockHistorySize),
 		BlockHistoryEstimatorEIP1559FeeCapBufferBlocks: nullIntFromPtr(c.GasEstimator.BlockHistory.EIP1559FeeCapBufferBlocks),
-		ChainType:                      null.StringFromPtr(c.ChainType),
-		EthTxReaperThreshold:           c.Transactions.ReaperThreshold,
-		EthTxResendAfterThreshold:      c.Transactions.ResendAfterThreshold,
-		EvmEIP1559DynamicFees:          null.BoolFromPtr(c.GasEstimator.EIP1559DynamicFees),
-		EvmFinalityDepth:               nullInt(c.FinalityDepth),
-		EvmGasBumpPercent:              nullInt(c.GasEstimator.BumpPercent),
-		EvmGasBumpTxDepth:              nullInt(c.GasEstimator.BumpTxDepth),
-		EvmGasBumpWei:                  c.GasEstimator.BumpMin,
-		EvmGasFeeCapDefault:            c.GasEstimator.FeeCapDefault,
-		EvmGasLimitDefault:             nullInt(c.GasEstimator.LimitDefault),
-		EvmGasLimitMax:                 nullInt(c.GasEstimator.LimitMax),
-		EvmGasLimitMultiplier:          nullFloat(c.GasEstimator.LimitMultiplier),
-		EvmGasLimitOCRJobType:          nullInt(c.GasEstimator.LimitJobType.OCR),
-		EvmGasLimitDRJobType:           nullInt(c.GasEstimator.LimitJobType.DR),
-		EvmGasLimitVRFJobType:          nullInt(c.GasEstimator.LimitJobType.VRF),
-		EvmGasLimitFMJobType:           nullInt(c.GasEstimator.LimitJobType.FM),
-		EvmGasLimitKeeperJobType:       nullInt(c.GasEstimator.LimitJobType.Keeper),
-		EvmGasPriceDefault:             c.GasEstimator.PriceDefault,
-		EvmGasTipCapDefault:            c.GasEstimator.TipCapDefault,
-		EvmGasTipCapMinimum:            c.GasEstimator.TipCapMin,
-		EvmHeadTrackerHistoryDepth:     nullInt(c.HeadTracker.HistoryDepth),
-		EvmHeadTrackerMaxBufferSize:    nullInt(c.HeadTracker.MaxBufferSize),
-		EvmHeadTrackerSamplingInterval: c.HeadTracker.SamplingInterval,
-		EvmLogBackfillBatchSize:        nullInt(c.LogBackfillBatchSize),
-		EvmLogPollInterval:             c.LogPollInterval,
-		EvmLogKeepBlocksDepth:          nullInt(c.LogKeepBlocksDepth),
-		EvmMaxGasPriceWei:              c.GasEstimator.PriceMax,
-		EvmNonceAutoSync:               null.BoolFromPtr(c.NonceAutoSync),
-		EvmUseForwarders:               null.BoolFromPtr(c.Transactions.ForwardersEnabled),
-		EvmRPCDefaultBatchSize:         nullInt(c.RPCDefaultBatchSize),
-		FlagsContractAddress:           nullString(c.FlagsContractAddress),
-		GasEstimatorMode:               null.StringFromPtr(c.GasEstimator.Mode),
-		LinkContractAddress:            nullString(c.LinkContractAddress),
-		OperatorFactoryAddress:         nullString(c.OperatorFactoryAddress),
-		MinIncomingConfirmations:       nullInt(c.MinIncomingConfirmations),
-		MinimumContractPayment:         c.MinContractPayment,
-		NodeNoNewHeadsThreshold:        c.NoNewHeadsThreshold,
+		ChainType:                         null.StringFromPtr(c.ChainType),
+		EthTxReaperThreshold:              c.Transactions.ReaperThreshold,
+		EthTxResendAfterThreshold:         c.Transactions.ResendAfterThreshold,
+		EthTxLogUnconfirmedAfterThreshold: c.Transactions.LogUnconfirmedAfterThreshold,
+		EvmEIP1559DynamicFees:             null.BoolFromPtr(c.GasEstimator.EIP1559DynamicFees),
+		EvmFinalityDepth:                  nullInt(c.FinalityDepth),
+		EvmGasBumpPercent:                 nullInt(c.GasEstimator.BumpPercent),
+		EvmGasBumpTxDepth:                 nullInt(c.GasEstimator.BumpTxDepth),
+		EvmGasBumpWei:                     c.GasEstimator.BumpMin,
+		EvmGasFeeCapDefault:               c.GasEstimator.FeeCapDefault,
+		EvmGasLimitDefault:                nullInt(c.GasEstimator.LimitDefault),
+		EvmGasLimitMax:                    nullInt(c.GasEstimator.LimitMax),
+		EvmGasLimitMultiplier:             nullFloat(c.GasEstimator.LimitMultiplier),
+		EvmGasLimitOCRJobType:             nullInt(c.GasEstimator.LimitJobType.OCR),
+		EvmGasLimitDRJobType:              nullInt(c.GasEstimator.LimitJobType.DR),
+		EvmGasLimitVRFJobType:             nullInt(c.GasEstimator.LimitJobType.VRF),
+		EvmGasLimitFMJobType:              nullInt(c.GasEstimator.LimitJobType.FM),
+		EvmGasLimitKeeperJobType:          nullInt(c.GasEstimator.LimitJobType.Keeper),
+		EvmGasPriceDefault:                c.GasEstimator.PriceDefault,
+		EvmGasTipCapDefault:               c.GasEstimator.TipCapDefault,
+		EvmGasTipCapMinimum:               c.GasEstimator.TipCapMin,
+		EvmHeadTrackerHistoryDepth:        nullInt(c.HeadTracker.HistoryDepth),
+		EvmHeadTrackerMaxBufferSize:       nullInt(c.HeadTracker.MaxBufferSize),
+		EvmHeadTrackerSamplingInterval:    c.HeadTracker.SamplingInterval,
+		EvmLogBackfillBatchSize:           nullInt(c.LogBackfillBatchSize),
+		EvmLogPollInterval:                c.LogPollInterval,
+		EvmLogKeepBlocksDepth:             nullInt(c.LogKeepBlocksDepth),
+		EvmMaxGasPriceWei:                 c.GasEstimator.PriceMax,
+		EvmNonceAutoSync:                  null.BoolFromPtr(c.NonceAutoSync),
+		EvmUseForwarders:                  null.BoolFromPtr(c.Transactions.ForwardersEnabled),
+		EvmRPCDefaultBatchSize:            nullInt(c.RPCDefaultBatchSize),
+		FlagsContractAddress:              nullString(c.FlagsContractAddress),
+		GasEstimatorMode:                  null.StringFromPtr(c.GasEstimator.Mode),
+		LinkContractAddress:               nullString(c.LinkContractAddress),
+		OperatorFactoryAddress:            nullString(c.OperatorFactoryAddress),
+		MinIncomingConfirmations:          nullInt(c.MinIncomingConfirmations),
+		MinimumContractPayment:            c.MinContractPayment,
+		NodeNoNewHeadsThreshold:           c.NoNewHeadsThreshold,
 	}
 	for _, ks := range c.KeySpecific {
 		if cfg.KeySpecific == nil {
@@ -425,12 +426,13 @@ func nullString[S fmt.Stringer](s *S) null.String {
 }
 
 type Transactions struct {
-	ForwardersEnabled    *bool
-	MaxInFlight          *uint32
-	MaxQueued            *uint32
-	ReaperInterval       *models.Duration
-	ReaperThreshold      *models.Duration
-	ResendAfterThreshold *models.Duration
+	ForwardersEnabled            *bool
+	MaxInFlight                  *uint32
+	MaxQueued                    *uint32
+	ReaperInterval               *models.Duration
+	ReaperThreshold              *models.Duration
+	ResendAfterThreshold         *models.Duration
+	LogUnconfirmedAfterThreshold *models.Duration
 }
 
 func (t *Transactions) setFrom(f *Transactions) {
@@ -451,6 +453,9 @@ func (t *Transactions) setFrom(f *Transactions) {
 	}
 	if v := f.ResendAfterThreshold; v != nil {
 		t.ResendAfterThreshold = v
+	}
+	if v := f.LogUnconfirmedAfterThreshold; v != nil {
+		t.LogUnconfirmedAfterThreshold = v
 	}
 }
 
@@ -760,6 +765,9 @@ func (c *Chain) SetFromDB(cfg *types.ChainCfg) error {
 	}
 	if cfg.EthTxResendAfterThreshold != nil {
 		c.Transactions.ResendAfterThreshold = cfg.EthTxResendAfterThreshold
+	}
+	if cfg.EthTxLogUnconfirmedAfterThreshold != nil {
+		c.Transactions.LogUnconfirmedAfterThreshold = cfg.EthTxLogUnconfirmedAfterThreshold
 	}
 	if cfg.EvmFinalityDepth.Valid {
 		v := uint32(cfg.EvmFinalityDepth.Int64)
