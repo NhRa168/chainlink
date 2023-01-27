@@ -1,9 +1,10 @@
 ---
 name: Faucet Issue
 about: Report an issue with a Chainlink LINK Faucet.
-title: '[FAUC] <replace with issue title>'
-labels: 'Faucet'
+title: "[FAUC] <replace with issue title>"
+labels: ''
 assignees: ''
+
 ---
 
 **Description**

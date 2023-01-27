@@ -1,9 +1,10 @@
 ---
 name: Node Operator Issue
 about: Report an issue encountered while operating a Chainlink node.
-title: '[NODE] <replace with issue title>'
-labels: 'Node Operator'
+title: "[NODE] <replace with issue title>"
+labels: ''
 assignees: ''
+
 ---
 
 **Description**

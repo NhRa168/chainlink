@@ -1,9 +1,10 @@
 ---
 name: Smart Contract Issue
 about: Report an issue with smart contracts found in this repository.
-title: '[SMRT] <replace with issue title>'
-labels: 'Smart Contract'
+title: "[SMRT] <replace with issue title>"
+labels: ''
 assignees: ''
+
 ---
 
 **Description**
